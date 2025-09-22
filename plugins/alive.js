@@ -1363,7 +1363,7 @@ const aliveMessage = await conn.sendMessage(from, {
                             forwardingScore: 1,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363401755639074@newsletter',
+                                newsletterJid: '120363412075023554@newsletter',
                                 newsletterName: "",
                                 serverMessageId: 999
                             },
