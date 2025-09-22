@@ -36,7 +36,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 > ㋛︎ ᴘᴏᴡᴇʀᴅ ʙʏ  𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃 🎧
 `;
 const aliveMessage = await conn.sendMessage(from, { 
-            video: { url: `https://files.catbox.moe/0cgx1b.mp4` }, 
+            video: { url: `https://files.catbox.moe/xc42h2.mp4` }, 
             mimetype: "video/mp4",
             ptv: true,
             contextInfo: {
