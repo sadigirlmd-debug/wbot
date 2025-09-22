@@ -70,7 +70,7 @@ const aliveMessage = await conn.sendMessage(from, {
                     body: '𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃',
                     mediaType: 1,
                     sourceUrl: "https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38",
-                    thumbnailUrl: 'https://files.catbox.moe/9gnp53.jpeg',
+                    thumbnailUrl: 'https://files.catbox.moe/yqswr4.jpg',
                     renderLargerThumbnail: true,
                     showAdAttribution: true
                 }
