@@ -1352,13 +1352,13 @@ const aliveMessage = await conn.sendMessage(from, {
                 if (messageType === '1') {
                     // Ping command
                     const startTime = Date.now();
-                    const pongMessage = await conn.sendMessage(from, { text: '*pong...*' });
+                    const pongMessage = await conn.sendMessage(from, { text: '*🧙‍♂️ 𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 🧙‍♂️*' });
                     const endTime = Date.now();
                     const ping = endTime - startTime;
                     await conn.sendMessage(from, { 
                         text: `*ꜱᴘᴇᴇᴅ : ${ping}ms*`,
                         contextInfo: {
-                            mentionedJid: ['94774589636@s.whatsapp.net'],
+                            mentionedJid: ['94760264995@s.whatsapp.net'],
                             groupMentions: [],
                             forwardingScore: 1,
                             isForwarded: true,
@@ -1368,11 +1368,11 @@ const aliveMessage = await conn.sendMessage(from, {
                                 serverMessageId: 999
                             },
                             externalAdReply: {
-                                title: 'SOLO-LEVELING-MD',
-                                body: '®ꜱᴏʟᴏ ʟᴇᴠᴇʟɪɴɢ ᴊɪɴʜᴜᴡᴀ',
+                                title: '🧙‍♂️ 𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 🧙‍♂️',
+                                body: 'ᴍʀ ꜱᴜʀᴀɴɢᴀ ᴍᴏᴅ-ᴢ',
                                 mediaType: 1,
-                                sourceUrl: "https://wa.me/+94774589636?text=i-am-bot-erro",
-                                thumbnailUrl: 'https://files.catbox.moe/8h21es.jpeg',
+                                sourceUrl: "https://wa.me/+94760264995?text=i-am-bot-erro",
+                                thumbnailUrl: 'https://files.catbox.moe/585kn5.jpg',
                                 renderLargerThumbnail: false,
                                 showAdAttribution: true
                             }
