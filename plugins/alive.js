@@ -1422,7 +1422,7 @@ const aliveMessage = await conn.sendMessage(from, {
 ┃◈│8️⃣  ⛩️ *OTHER MENU* ⚡
 ┃◈│9️⃣  ⛩️ *REACTIONS MENU* ⚡
 ┃◈│🔟  ⛩️  *MINE MENU* ⚡
-┃◈│1️⃣1️⃣  ⛩️ *SOLO LEVELING ANIME COMMAND 🇯🇵*
+┃◈│1️⃣1️⃣  ⛩️ *ZANTA-XMD ANIME COMMAND 🇯🇵*
 ┃◈│1️⃣2️⃣  ⛩️ *LOGO MENU* ⚡
 ┃◈│1️⃣3️⃣ ⛩️ *MINE COMMAND NEW ✂️*
 ┃◈│1️⃣4️⃣ ⛩️ *NEWS MENU*
@@ -1433,7 +1433,7 @@ const aliveMessage = await conn.sendMessage(from, {
 
 `;
                     await conn.sendMessage(from, { 
-                        audio: { url: `https://files.catbox.moe/h6lbp6.mp3` }, 
+                        audio: { url: `https://files.catbox.moe/uuuapf.mp3` }, 
                         mimetype: "audio/mpeg",
                         ptt: "true",
                         contextInfo: {
