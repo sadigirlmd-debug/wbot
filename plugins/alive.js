@@ -1280,9 +1280,7 @@ const aliveMessage = await conn.sendMessage(from, {
 ┃⛩️ *botinfo*
 ┗━━━━━━━━━━━━━━━
 
-*🎧 BOT WEBSITE COMING SOON📥*
-
-┏━━━━❮ 🐉 SOLO LEVELING MINE COMMAND 🐉 ❯━━━━
+┏━━━━❮ 🐉 ZANTA-XMD MINE COMMAND 🐉 ❯━━━━
 ┃ 
 ┃ ⛩️  *මෙම කමාන්ඩ් ලිස්ටෙක දිනෙන් දින අලුත් වෙන බැවින් චැනල්     එකත් සමග සම්බන්ධව සිටින්න⚠*
 ┃
@@ -1435,16 +1433,16 @@ const aliveMessage = await conn.sendMessage(from, {
 
 `;
                     await conn.sendMessage(from, { 
-                        audio: { url: `https://files.catbox.moe/iyn9so.mp3` }, 
+                        audio: { url: `https://files.catbox.moe/h6lbp6.mp3` }, 
                         mimetype: "audio/mpeg",
                         ptt: "true",
                         contextInfo: {
                             externalAdReply: {
-                                title: "SOLO-LEVELING-MD",
-                                body: "®ꜱᴏʟᴏ ʟᴇᴠᴇʟɪɴɢ ᴊɪɴʜᴜᴡᴀ",
+                                title: "🧙‍♂️ 𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 🧙‍♂️",
+                                body: "ᴍʀ ꜱᴜʀᴀɴɢᴀ ᴍᴏᴅ-ᴢ",
                                 mediaType: 1,
-                                sourceUrl: "https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38",
-                                thumbnailUrl: "https://files.catbox.moe/vuifao.jpeg",
+                                sourceUrl: "https://whatsapp.com/channel/0029Vb4F314CMY0OBErLlV2M",
+                                thumbnailUrl: "https://files.catbox.moe/r86oac.jpg",
                                 renderLargerThumbnail: true,
                                 showAdAttribution: true
                             }
