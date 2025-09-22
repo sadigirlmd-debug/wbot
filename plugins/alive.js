@@ -1450,15 +1450,15 @@ const aliveMessage = await conn.sendMessage(from, {
                     }, { quoted: mek });
 
                     const menuMsg = await conn.sendMessage(from, {
-                        image: { url: `https://files.catbox.moe/vuifao.jpeg` },
+                        image: { url: `https://files.catbox.moe/r86oac.jpg` },
                         caption: menuCap,
                         contextInfo: {
-                            mentionedJid: ['94774589636@s.whatsapp.net'],
+                            mentionedJid: ['94760264995@s.whatsapp.net'],
                             groupMentions: [],
                             forwardingScore: 1,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363401755639074@newsletter',
+                                newsletterJid: '120363412075023554@newsletter',
                                 newsletterName: " 🧙‍♂️ 𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 🧙‍♂️",
                                 serverMessageId: 999
                             }
