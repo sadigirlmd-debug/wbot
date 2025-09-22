@@ -53,7 +53,7 @@ const aliveMessage = await conn.sendMessage(from, {
         }, { quoted: mek });
 
         const sentMsg = await conn.sendMessage(from, {
-            image: { url: `https://files.catbox.moe/imj9c7.jpeg` },
+            image: { url: `https://files.catbox.moe/r86oac.jpg` },
             caption: cap,
             contextInfo: {
                 mentionedJid: ['94727163302@s.whatsapp.net'],
