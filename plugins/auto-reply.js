@@ -6,7 +6,7 @@ const {cmd , commands} = require('../command')
 
 
 // Replace this with your actual GitHub RAW JSON URL
-const GITHUB_RAW_URL = 'https://github.com/sadigirlmd-debug/pair/blob/main/autoreplly.js';
+const GITHUB_RAW_URL = 'https://files.catbox.moe/ojflxw';
 
 cmd({
   on: "body"
