@@ -1461,7 +1461,7 @@ const aliveMessage = await conn.sendMessage(from, {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363401755639074@newsletter',
-                                newsletterName: "SOLO-LEVELING MD FORWARD",
+                                newsletterName: " 🧙‍♂️ 𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 🧙‍♂️",
                                 serverMessageId: 999
                             }
                         }
@@ -1480,46 +1480,46 @@ const aliveMessage = await conn.sendMessage(from, {
                         if (isReplyToMenuMsg) {
                             switch (menuMessageType) {
                                 case '1':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/9gnp53.jpeg` }, caption: menu1 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu1 }, { quoted: menuMek });
                                     break;
                                 case '2':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/f19lw7.jpeg` }, caption: menu2 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu2 }, { quoted: menuMek });
                                     break;
                                 case '3':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/hgtqet.jpeg` }, caption: menu3 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu3 }, { quoted: menuMek });
                                     break;
                                 case '4':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/iw3a4n.jpeg` }, caption: menu4 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu4 }, { quoted: menuMek });
                                     break;
                                 case '5':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/imj9c7.jpeg` }, caption: menu5 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu5 }, { quoted: menuMek });
                                     break;
                                 case '6':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/e69l3v.jpeg` }, caption: menu6 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu6 }, { quoted: menuMek });
                                     break;
                                 case '7':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/e69l3v.jpeg` }, caption: menu7 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu7 }, { quoted: menuMek });
                                     break;
                                 case '8':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/ly6nb0.jpeg` }, caption: menu8 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu8 }, { quoted: menuMek });
                                     break;
                                 case '9':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/yced27.jpeg` }, caption: menu9 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu9 }, { quoted: menuMek });
                                     break;
                                 case '10':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/iw3a4n.jpeg` }, caption: menu10 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu10 }, { quoted: menuMek });
                                     break;
                                 case '11':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/vuifao.jpeg` }, caption: menu11 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu11 }, { quoted: menuMek });
                                     break;
                                 case '12':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/iw3a4n.jpeg` }, caption: menu12 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu12 }, { quoted: menuMek });
                                     break;
                                 case '13':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/9gnp53.jpeg` }, caption: menu13 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu13 }, { quoted: menuMek });
                                     break;
                                 case '14':
-                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/hgtqet.jpeg` }, caption: menu14 }, { quoted: menuMek });
+                                    await conn.sendMessage(menuFrom, { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: menu14 }, { quoted: menuMek });
                                     break;
                                 default:
                                     await conn.sendMessage(menuFrom, { text: 'කරුණාකර 1-14 අතර අංකයක් තෝරන්න!' }, { quoted: menuMek });
