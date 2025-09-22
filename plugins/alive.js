@@ -87,7 +87,7 @@ const aliveMessage = await conn.sendMessage(from, {
 *╭─「🐉𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 𝐋𝐈𝐒𝐓🐉」*
 *│ 🔥 ʀᴜɴᴛɪᴍᴇ : ${runtime(process.uptime())}*
 *│ 🔥 ʀᴀᴍ ᴜꜱᴀɢᴇ : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
-*│ 🔥 ᴘʟᴀᴛ�depart: true,
+*│ 🔥 ᴘʟᴀᴛ�depart: true,*
 *│ 🔥 ᴠᴇʀꜱɪᴏɴ : 1.0*
 *│ 🔥 ᴏᴡɴᴇʀ : ᴍʀ ꜱᴜʀᴀɴɢᴀ ᴍᴏᴅ-ᴢ*
 *╰──────────●●*
@@ -1416,7 +1416,7 @@ const aliveMessage = await conn.sendMessage(from, {
 ┃◈│2️⃣  ⛩️ *GROUP MENU* ⚡
 ┃◈│3️⃣  ⛩️ *FUN MENU* ⚡
 ┃◈│4️⃣  ⛩️ *OWNER MENU* ⚡
-┃◈│5️⃣  ⛩️ *AI MENU⚡
+┃◈│5️⃣  ⛩️ *AI MENU⚡*
 ┃◈│6️⃣  ⛩️ *ANIME MENU* ⚡
 ┃◈│7️⃣  ⛩️ *CONVERT MENU* ⚡
 ┃◈│8️⃣  ⛩️ *OTHER MENU* ⚡
