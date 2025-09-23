@@ -1,71 +1,39 @@
 const config = require('../config')
 const {cmd , commands} = require('../command')
+const os = require("os")
+const {runtime} = require('../lib/functions')
 cmd({
-    pattern: "owner",
-    alias: ["botingsk","dlflflfcxlslx"], 
-    react: "☺️",
-    desc: "get owner dec",
+    pattern: "system",
+    alias: ["symine","botsystem"],
+    desc: "Check up time , ram usage and more",
     category: "main",
+    react: "💻",
     filename: __filename
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let about = `╭━---------------------------------------------
+let status = `╭━━〔 *𝐒𝐎𝐋𝐎 𝐋𝐄𝐕𝐄𝐋𝐈𝐍𝐆-𝐌𝐃* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• *⛩️ 𝐎𝐰𝐧𝐞𝐫: ® 𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃 ☺️*
+┃◈┃• *⏳Uptime*: ${runtime(process.uptime())}
+┃◈┃• *📟 Ram*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
+┃◈┃• *⚙️ Platform:-* ${os.hostname()}
+┃◈┃• *👨‍💻 Owner*: Sulaksha Madara 
 ┃◈└───────────┈⊷
-╰──────────────┈
-┏━❮ ⛩️ 𝐐𝐔𝐄𝐄𝐍 𝐃𝐈𝐍𝐔 𝐌𝐃 ⛩️ ❯━
-┃◈┃🤖 ʙᴏᴛ ɴᴀᴍᴇ :QUEEN DINU MD
-┃◈┃🔖 ᴠᴇʀsɪᴏɴ : 2.0
-┃◈┃📟 ᴘʟᴀᴛғᴏʀᴍ : Linux
-┃◈┃👨‍💻ᴏᴡɴᴇʀ: 𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃 ⛩️
-┃◈┗━━━━━━━━━━━━━━𖣔𖣔
 ╰──────────────┈⊷
-⛩️ *MY OWNER ABOUT :-* *About Me Hi, I'm Dinu — a passionate individual with a dream to rise above limits and make my name a globally recognized brand. I have a basic knowledge of HTML and a deep interest in technology and design. I’m currently focused on learning Japanese and Korean, as I believe language is a key that opens doors to new opportunities.*
+`
+await conn.sendMessage(from, {
+        video: {
+            url: 'https://files.catbox.moe/vu0adv.mp4'
+        },
+        mimetype: 'video/mp4',
+        ptv: true
+    }, { quoted: mek });
+    
+return reply(`${status}`)
+  
+}catch(e){
+console.log(e)
+reply(`${e}`)
 
-*My ultimate goal is not just to find success, but to create it — by building a powerful brand that will be known and respected worldwide. Every step I take is a move towards that vision — driven by hard work, dedication, and a desire to give my mother the life she deserves.*
-
-*This is just the beginning of my journey. One day, the world will know the name Rukshan.*
-
-⛩️ *_This WhatsApp bot is based on the Japanese anime series 𝐐𝐔𝐄𝐄𝐍 𝐃𝐈𝐍𝐔 𝐌𝐃, and I, or rather someone named 𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃, created it this way.*_
-
-*🐉 If you need any help from me, you can type the "alive" command and get the "menu" thanks*
-*────────────────────────┈⊷*
-⊷
-*•────────────•⟢*
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴏʟᴏ ʟᴇᴠᴇʟɪɴɢ`, // Display the owner's details
-            contextInfo: {
-                mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`], 
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363401755639074@newsletter',
-                    newsletterName: '⛩️ ꜱᴏʟᴏ ʟᴇᴠᴇʟɪɴɢ ᴏᴡɴᴇʀ ⛩️',
-                    serverMessageId: 143
-                }            
-            }
-        }, { quoted: mek });
-
-    // Send the audio file with context info
-        await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/ggebie.mp3' },
-            mimetype: 'audio/mp4',
-            ptt: true,
-            contextInfo: { 
-                mentionedJid: [m.sender],
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363401755639074@newsletter',
-                    newsletterName: 'SOLO LEVELING MENU',
-                    serverMessageId: 143
-                }
-            }
-        }, { quoted: mek });
-
-    } catch (error) {
-        console.error(error);
-        reply(`An error occurred: ${error.message}`);
-    }
-});
+}
+})
