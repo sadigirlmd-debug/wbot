@@ -320,6 +320,16 @@ cmd({
         await conn.sendMessage(m.chat, {
             image: { url: userPicUrl },
             caption: "🖼️ Here is the profile picture of the specified user."
+
+await conn.sendMessage(from, {
+        video: {
+            url: 'https://files.catbox.moe/xc42h2.mp4'
+        },
+        mimetype: 'video/mp4',
+        ptv: true
+    }, { quoted: mek });
+    
+return reply(`${status}`)
         });
     } catch (e) {
         console.error("Error fetching user profile picture:", e);
