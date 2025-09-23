@@ -48,8 +48,6 @@ await conn.sendMessage(from, {
         mimetype: 'video/mp4',
         ptv: true
     }, { quoted: mek });
-    
-return reply(`${status}`)
 
         await conn.sendMessage(
             from,
