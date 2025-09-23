@@ -3,8 +3,8 @@ const {cmd , commands} = require('../command')
 const os = require("os")
 const {runtime} = require('../lib/functions')
 cmd({
-    pattern: "system",
-    alias: ["symine","botsystem"],
+    pattern: "owner",
+    alias: ["zanta","suranga"],
     desc: "Check up time , ram usage and more",
     category: "main",
     react: "💻",
