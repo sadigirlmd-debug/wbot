@@ -1,4 +1,3 @@
-
 const { cmd } = require("../command");
 const config = require("../config");
 
@@ -6,14 +5,14 @@ cmd({
   pattern: "channelreact",
   alias: ["chr"],
   react: "📕",
-  use: ".channelreact <link>,<reaction>",
+  use: ".channelreact <channel link>,<emoji>",
   desc: "React to a channel message",
   category: "main",
   filename: __filename,
 },
 async (conn, mek, m, { q, reply }) => {
   try {
-    // Language variables
+    // ---------------- Language messages ----------------
     let usageMsg, invalidInput, invalidFormat, successMsg, errorMsg;
     
     if (config.LANG === 'si') {
@@ -30,18 +29,34 @@ async (conn, mek, m, { q, reply }) => {
       errorMsg = (msg) => `❌ Error: ${msg}`;
     }
 
+    // ---------------- Validate input ----------------
     if (!q || !q.includes(',')) return reply(usageMsg);
+
     const [link, reaction] = q.split(',').map(v => v.trim());
     if (!link || !reaction) return reply(invalidInput);
 
-    const parts = link.split('/');
-    const channelId = parts[4];
-    const messageId = parts[5];
+    // ---------------- Extract channelId + messageId ----------------
+    let channelId, messageId;
+    try {
+      const url = new URL(link);
+      const parts = url.pathname.split("/").filter(Boolean);
+
+      // Expected: /channel/<channelId>/<messageId>
+      if (parts[0] === "channel" && parts.length >= 3) {
+        channelId = parts[1];
+        messageId = parts[2];
+      }
+    } catch {
+      return reply(invalidFormat);
+    }
 
     if (!channelId || !messageId) return reply(invalidFormat);
 
-    const res = await conn.newsletterMetadata("invite", channelId);
-    await conn.newsletterReactMessage(res.id, messageId, reaction);
+    // ---------------- Make sure channel exists ----------------
+    await conn.newsletterMetadata(channelId);
+
+    // ---------------- Send reaction ----------------
+    await conn.newsletterReactMessage(channelId, messageId, reaction);
 
     reply(successMsg(reaction));
   } catch (e) {
