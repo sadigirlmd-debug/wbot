@@ -3,8 +3,26 @@ const {cmd , commands} = require('../command')
 const os = require("os")
 const {runtime} = require('../lib/functions')
 cmd({
-    pattern: "👻 𝐙𝐀𝐍𝐓𝐀-𝐗𝐌𝐃 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘 👻",
-    alias: ["save","send"],
+    pattern: ".👻 𝐙𝐀𝐍𝐓𝐀-𝐗𝐌𝐃 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘 👻 
+
+> Follow WhatsApp Channel :- ⤵️
+ 
+🖇️ https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38
+
+> Joine Whatsapp Group :- ⤵️
+
+🖇️ https://chat.whatsapp.com/DXQOFlfOnOt5AQsWSaGZqT?mode=ems_copy_c
+
+> Follow Tiktok Page :- ⤵️
+
+🖇️ tiktok.com/@_zanta_vibe_
+
+> owner :- ⤵️
+
+🖇️ https://wa.me/+94760264995?text=hi-zanta-xmd-owner-save-me-🐼🪄💗
+
+> ꜰᴀʟʟᴏᴡ ᴄʜᴀɴɴᴇʟ ɢᴇᴛ ʟɪɴᴋ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴜʀᴀɴɢᴀ ᴍᴏᴅ-ᴢ",
+    alias: ["st","mr"],
     desc: "Check up time , ram usage and more",
     category: "main",
     react: "💻",
