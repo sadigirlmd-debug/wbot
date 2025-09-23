@@ -28,10 +28,10 @@ const VOICE_CLIPS = [
 const ALIVE_VIDEO = "https://files.catbox.moe/52py80.mp4"; // මෙතැන valid MP4 video link එකක් දාන්න
 
 cmd({
-    pattern: "menu3",
-    desc: "menu the bot",
+    pattern: "menu",
+    desc: "menu2",
     category: "menu2",
-    react: "⚡",
+    react: "☠️",
     filename: __filename
 }, async (conn, mek, m, { reply, from }) => {
     try {
