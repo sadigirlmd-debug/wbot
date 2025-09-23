@@ -4,7 +4,7 @@ const { fetchJson } = require('../lib/functions')
 
 cmd({
     pattern: "ai",
-    alias: ["laki6"], 
+    alias: ["laki63"], 
     react: "📑",
     desc: "ai chat.",
     category: "main",
@@ -14,12 +14,12 @@ async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sende
     try {
         // Check if the user is asking who made it
         if (q.toLowerCase().includes("කවුද හැදුවේ") || q.toLowerCase().includes("who made this")) {
-            return reply(`ZANTA-XMD OWNER IS FOUNDER`)
+            return reply(`QUEEN DINU MD OWNER IS FOUNDER`)
         }
 
         // Normal AI response
         let data = await fetchJson(`https://dark-shan-yt.koyeb.app/ai/gemini?q=${q}`)
-        return reply(` ${data.data}\n\n> ㋛︎ ᴘᴏᴡᴇʀᴅ ʙʏ  ᴍʀ ꜱᴜʀᴀɴɢᴀ ᴍᴏᴅ-ᴢ`)
+        return reply(` ${data.data}\n\n> ㋛︎ ᴘᴏᴡᴇʀᴅ ʙʏ  ᴍʀ  𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃 ᶜᵒᵈᵉʳ`)
     } catch(e) {
         console.log(e)
         reply(`අයියෝ බ්‍රෝ, එරර් එකක්! 😂\n${e}`)
