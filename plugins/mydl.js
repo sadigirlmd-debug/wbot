@@ -41,6 +41,16 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ╰──────────────┈⊷
 > *Note:* Most commands are owner-only`;
 
+await conn.sendMessage(from, {
+        video: {
+            url: 'https://files.catbox.moe/xc42h2.mp4'
+        },
+        mimetype: 'video/mp4',
+        ptv: true
+    }, { quoted: mek });
+    
+return reply(`${status}`)
+
         await conn.sendMessage(
             from,
             {
@@ -321,15 +331,6 @@ cmd({
             image: { url: userPicUrl },
             caption: "🖼️ Here is the profile picture of the specified user."
 
-await conn.sendMessage(from, {
-        video: {
-            url: 'https://files.catbox.moe/xc42h2.mp4'
-        },
-        mimetype: 'video/mp4',
-        ptv: true
-    }, { quoted: mek });
-    
-return reply(`${status}`)
         });
     } catch (e) {
         console.error("Error fetching user profile picture:", e);
