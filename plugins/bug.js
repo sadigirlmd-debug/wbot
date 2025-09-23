@@ -3,44 +3,49 @@ const { cmd } = require("../command");
 const config = require("../config");
 
 cmd({
-    pattern: "report",
-    alias: ["ask", "bug", "request"],
-    desc: "Report a bug or request a feature",
-    category: "utility",
-    filename: __filename
-}, async (conn, mek, m, {
-    from, body, command, args, senderNumber, reply
-}) => {
-    try {
-        const botOwner = conn.user.id.split(":")[0]; // Extract the bot owner's number
-        if (senderNumber !== botOwner) {
-            return reply("Only the bot owner can use this command.");
-        }
-        
-        if (!args.length) {
-            return reply(`Example: ${config.PREFIX}report Play command is not working`);
-        }
-
-        const reportedMessages = {};
-        const devNumber = "94760264995"; // Bot owner's number
-        const messageId = m.key.id;
-
-        if (reportedMessages[messageId]) {
-            return reply("This report has already been forwarded to the owner. Please wait for a response.");
-        }
-        reportedMessages[messageId] = true;
-
-        const reportText = `*| REQUEST/BUG |*\n\n*User*: @${m.sender.split("@")[0]}\n*Request/Bug*: ${args.join(" ")}`;
-        const confirmationText = `Hi ${m.pushName}, your request has been forwarded to the owner. Please wait...`;
-
-        await conn.sendMessage(`${devNumber}@s.whatsapp.net`, {
-            text: reportText,
-            mentions: [m.sender]
-        }, { quoted: m });
-
-        reply(confirmationText);
-    } catch (error) {
-        console.error(error);
-        reply("An error occurred while processing your report.");
+  pattern: "channelreact",
+  alias: ["chr"],
+  react: "📕",
+  use: ".channelreact <link>,<reaction>",
+  desc: "React to a channel message",
+  category: "main",
+  filename: __filename,
+},
+async (conn, mek, m, { q, reply }) => {
+  try {
+    // Language variables
+    let usageMsg, invalidInput, invalidFormat, successMsg, errorMsg;
+    
+    if (config.LANG === 'si') {
+      usageMsg = "*භාවිතය:* .channelreact <link>,<reaction>";
+      invalidInput = "*අවලංගු ආදානයක්.* කරුණාකර සබැඳිය හා විකාශය දෙකම ලබාදෙන්න.";
+      invalidFormat = "*අවලංගු නාලිකා සබැඳි ආකෘතියක්.*";
+      successMsg = (reaction) => `✅ "${reaction}" ලෙස ප්‍රතික්‍රියාවක් යවා ඇත.`;
+      errorMsg = (msg) => `❌ දෝෂයක්: ${msg}`;
+    } else {
+      usageMsg = "*Usage:* .channelreact <channel link>,<emoji>";
+      invalidInput = "*Invalid input.* Please provide both the link and the emoji.";
+      invalidFormat = "*Invalid channel link format.*";
+      successMsg = (reaction) => `✅ Reacted with "${reaction}" to the message.`;
+      errorMsg = (msg) => `❌ Error: ${msg}`;
     }
+
+    if (!q || !q.includes(',')) return reply(usageMsg);
+    const [link, reaction] = q.split(',').map(v => v.trim());
+    if (!link || !reaction) return reply(invalidInput);
+
+    const parts = link.split('/');
+    const channelId = parts[4];
+    const messageId = parts[5];
+
+    if (!channelId || !messageId) return reply(invalidFormat);
+
+    const res = await conn.newsletterMetadata("invite", channelId);
+    await conn.newsletterReactMessage(res.id, messageId, reaction);
+
+    reply(successMsg(reaction));
+  } catch (e) {
+    console.error(e);
+    reply(errorMsg(e.message));
+  }
 });
