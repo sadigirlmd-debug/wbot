@@ -112,7 +112,7 @@ const port = process.env.PORT || 9090;
   console.log('Plugins installed successful ✅')
   console.log('Bot connected to whatsapp ✅')
   
-  let up = `*Hello there SOLO-LEVELING-MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet SOLO-LEVELING-MD WhatsApp Bot.\n\n *Thanks for using SOLO-LEVELING-MD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38\n\n- *YOUR PREFIX:* = ${prefix}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/RUKA-BOT-TEST/SOLO-LEVELING\n\n> © Fallow Channel Get link Powered by Lod tem\ud83d\udda4`;
+  let up = `.ping`;
     conn.sendMessage('94760264995@s.whatsapp.net', { image: { url: `https://files.catbox.moe/r86oac.jpg` }, caption: up })
   }
   })
