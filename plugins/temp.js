@@ -55,7 +55,7 @@ _Email will expire after 24 hours_
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363412075023554@newsletterr',
+                        newsletterJid: '120363412075023554@newsletter',
                         newsletterName: '🧙‍♂️ 𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 🧙‍♂️',
                         serverMessageId: 101
                     }
