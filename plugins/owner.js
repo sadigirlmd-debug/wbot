@@ -1,52 +1,39 @@
-const { cmd } = require('../command');
-const config = require('../config');
-
+const config = require('../config')
+const {cmd , commands} = require('../command')
 cmd({
     pattern: "owner",
-    react: "✅", 
-    desc: "Get owner number",
+    alias: ["botingsk","dlflflfcxlslx"], 
+    react: "☺️",
+    desc: "get owner dec",
     category: "main",
     filename: __filename
-}, 
-async (conn, mek, m, { from }) => {
-    try {
-        const ownerNumber = config.OWNER_NUMBER; // Fetch owner number from config
-        const ownerName = config.OWNER_NAME;     // Fetch owner name from config
-
-        const vcard = 'BEGIN:VCARD\n' +
-                      'VERSION:3.0\n' +
-                      `FN:${ownerName}\n` +  
-                      `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '')}:${ownerNumber}\n` + 
-                      'END:VCARD';
-
-        // Send the vCard
-        const sentVCard = await conn.sendMessage(from, {
-            contacts: {
-                displayName: ownerName,
-                contacts: [{ vcard }]
-            }
-        });
-
-        // Send the owner contact message with image and audio
-        await conn.sendMessage(from, {
-            image: { url: 'https://files.catbox.moe/9gnp53.jpeg' }, // Image URL from your request
-            caption: `*🍓🍟  හායි ${pushname} කොහමද ඔයාට😝♦*
-*╭-----------------------------------------------®
-*┃🤖 ʙᴏᴛ ɴᴀᴍᴇ : 𝐒𝐎𝐋𝐎-𝐋𝐄𝐕𝐄𝐋𝐈𝐍𝐆-𝐌𝐃*
-*┃🔖 ᴠᴇʀsɪᴏɴ : 1.0*
-*┃📟 ᴘʟᴀᴛғᴏʀᴍ : Linux*
-*┃👨‍💻 ᴏᴡɴᴇʀ: ꜱᴏʟᴏ ʟᴇᴠᴇʟɪɴɢ ʀᴜᴋꜱʜᴀɴ*
-*┗━━━━━━━━━━━━━━𖣔𖣔*
-
-
-╭━━〔 *SOLO-LEVELING-MD* 〕━━┈⊷
+},
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+let about = `╭━---------------------------------------------
 ┃◈╭─────────────·๏
-┃◈┃• *Here is the owner details*
-┃◈┃• *Name* - ${ownerName}
-┃◈┃• *Number* ${ownerNumber}
-┃◈┃• *Version*: 2.0.0 Beta
+┃◈┃• *⛩️ 𝐎𝐰𝐧𝐞𝐫: ® 𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃 ☺️*
 ┃◈└───────────┈⊷
+╰──────────────┈
+┏━❮ ⛩️ 𝐐𝐔𝐄𝐄𝐍 𝐃𝐈𝐍𝐔 𝐌𝐃 ⛩️ ❯━
+┃◈┃🤖 ʙᴏᴛ ɴᴀᴍᴇ :QUEEN DINU MD
+┃◈┃🔖 ᴠᴇʀsɪᴏɴ : 2.0
+┃◈┃📟 ᴘʟᴀᴛғᴏʀᴍ : Linux
+┃◈┃👨‍💻ᴏᴡɴᴇʀ: 𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃 ⛩️
+┃◈┗━━━━━━━━━━━━━━𖣔𖣔
 ╰──────────────┈⊷
+⛩️ *MY OWNER ABOUT :-* *About Me Hi, I'm Dinu — a passionate individual with a dream to rise above limits and make my name a globally recognized brand. I have a basic knowledge of HTML and a deep interest in technology and design. I’m currently focused on learning Japanese and Korean, as I believe language is a key that opens doors to new opportunities.*
+
+*My ultimate goal is not just to find success, but to create it — by building a powerful brand that will be known and respected worldwide. Every step I take is a move towards that vision — driven by hard work, dedication, and a desire to give my mother the life she deserves.*
+
+*This is just the beginning of my journey. One day, the world will know the name Rukshan.*
+
+⛩️ *_This WhatsApp bot is based on the Japanese anime series 𝐐𝐔𝐄𝐄𝐍 𝐃𝐈𝐍𝐔 𝐌𝐃, and I, or rather someone named 𝐂𝐘𝐁𝐄𝐑 𝐃𝐈𝐍𝐔 𝐈𝐃, created it this way.*_
+
+*🐉 If you need any help from me, you can type the "alive" command and get the "menu" thanks*
+*────────────────────────┈⊷*
+⊷
+*•────────────•⟢*
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴏʟᴏ ʟᴇᴠᴇʟɪɴɢ`, // Display the owner's details
             contextInfo: {
                 mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`], 
