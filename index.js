@@ -112,11 +112,11 @@ const port = process.env.PORT || 9090;
   console.log('Plugins installed successful ✅')
   console.log('Bot connected to whatsapp ✅')
   
-  let up = `.👻 𝐙𝐀𝐍𝐓𝐀-𝐗𝐌𝐃 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘 👻 
+  let up = `.𝐙𝐀𝐍𝐓𝐀-𝐗𝐌𝐃 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘
 
 > Follow WhatsApp Channel :- ⤵️
  
-🖇️ https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38
+🖇️ https://whatsapp.com/channel/0029Vb4F314CMY0OBErLlV2M
 
 > Joine Whatsapp Group :- ⤵️
 
