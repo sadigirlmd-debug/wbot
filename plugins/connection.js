@@ -3,7 +3,7 @@ const {cmd , commands} = require('../command')
 const os = require("os")
 const {runtime} = require('../lib/functions')
 cmd({
-    pattern: "zanta-xmd connected successfully",
+    pattern: "zanta-xmd",
     alias: ["symine1","botsystem3"],
     desc: "Check up time , ram usage and more",
     category: "main",
