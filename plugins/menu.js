@@ -339,36 +339,26 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• 📹 ytv
 ┃◈╰─────────────────┈⊷
 ╰━━━━━━━━━━━━━━━━━━━┈⊷
-> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴜʀᴀɴɢᴀ ᴍᴏᴅ-ᴢ`;
+⊷
+*•────────────•⟢*
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ Qᴜᴇᴇɴ ᴅɪɴᴜ ʙʏ ᴄʏʙᴇʀ ᴅɪɴᴜ ɪᴅ ⛩️
+*•────────────•⟢*
+`
 
-        await conn.sendMessage(
-            from,
-            {
-                { image: { url: `https://files.catbox.moe/z897oi.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363412075023554@newsletter',
-                        newsletterName: 🧙‍♂️ 𝐙𝐀𝐍𝐓𝐀 × 𝐌𝐃 𝐎𝐅𝐂 🧙‍♂️,
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-        // Send audio
-        await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/sz9bse.mp3' },
-            mimetype: 'audio/mp4',
-            ptt: true
-        }, { quoted: mek });
-        
-    } catch (e) {
-        console.log(e);
-        reply(`❌ Error: ${e}`);
+await conn.sendMessage(from,{image:{url:`https://files.catbox.moe/imj9c7.jpeg`},caption:about,
+                             contextInfo: {
+    mentionedJid: [m.sender],
+    forwardingScore: 999,
+    isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363401755639074@newsletter',
+      newsletterName: 'QUEEN DINU ABOUT 🐉',
+      serverMessageId: 999
     }
-});
+  }
+}, { quoted: mek });
+} catch (e) {
+console.log(e)
+reply(`${e}`)
+}
+})
