@@ -8,6 +8,10 @@
     "stop": "pm2 stop SOLO-LEVELING-MD",
     "restart": "pm2 restart SOLO-LEVELING-MD"
   },
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
+  },
   "dependencies": {
     "@whiskeysockets/baileys": "npm:@fizzxydev/baileys-pro@8.5.12",
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -23,7 +27,7 @@
     "crypto-digest-sync": "^1.0.0",
     "crypto-js": "latest",
     "express": "^4.19.2",
-    "file-size-url": "1.0.4",
+    "filesize": "^10.1.0",
     "file-type": "^16.5.3",
     "fluent-ffmpeg": "^2.1.2",
     "form-data": "^4.0.0",
