@@ -27,8 +27,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• groupsprivacy - Set group add privacy
 ┃◈┃• getprivacy - View current privacy settings
 ┃◈┃• getpp - Get user's profile picture
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+
+╭━━〔 *Options for privacy commands:* 〕━━┈⊷
 ┃◈┃
-┃◈┃*Options for privacy commands:*
 ┃◈┃• all - Everyone
 ┃◈┃• contacts - My contacts only
 ┃◈┃• contact_blacklist - Contacts except blocked
@@ -36,7 +39,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• match_last_seen - Match last seen
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-*Note:* Most commands are owner-only`;
+> *Note:* Most commands are owner-only`;
 
         await conn.sendMessage(
             from,
