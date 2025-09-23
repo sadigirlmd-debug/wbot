@@ -22,7 +22,7 @@ cmd({
 🖇️ https://wa.me/+94760264995?text=hi-zanta-xmd-owner-save-me-🐼🪄💗
 
 > ꜰᴀʟʟᴏᴡ ᴄʜᴀɴɴᴇʟ ɢᴇᴛ ʟɪɴᴋ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴜʀᴀɴɢᴀ ᴍᴏᴅ-ᴢ",
-    alias: ["st","mr"],
+    alias: ["symine1","botsystem1"],
     desc: "Check up time , ram usage and more",
     category: "main",
     react: "💻",
