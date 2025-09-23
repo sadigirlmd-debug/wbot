@@ -344,14 +344,14 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/vuifao.jpeg' },
+                image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/z897oi.jpg' },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363401755639074@newsletter',
+                        newsletterJid: '120363412075023554@newsletter',
                         newsletterName: config.BOT_NAME,
                         serverMessageId: 143
                     }
@@ -362,7 +362,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/r4r0hz.mp3' },
+            audio: { url: 'https://files.catbox.moe/sz9bse.mp3' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
