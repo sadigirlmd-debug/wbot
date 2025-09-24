@@ -1,115 +1,133 @@
-const { cmd, commands } = require("../lib/command");
-const yts = require("yt-search");
-const { ytmp3 } = require("@vreden/youtube_scraper");
+const { cmd, commands } = require('../lib/command');
+const yts = require('yt-search');
+const { fetchJson } = require('../lib/functions');
+const { ytsearch } = require('@dark-yasiya/yt-dl.js');
 
-cmd(
-  {
-    pattern: "song8",
+// If you're using Node <18, enable fetch:
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+
+// Function to extract the video ID from youtu.be or YouTube links
+function extractYouTubeId(url) {
+    const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/|playlist\?list=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+}
+
+// Convert any YouTube URL to full watch link
+function convertYouTubeLink(q) {
+    const videoId = extractYouTubeId(q);
+    if (videoId) {
+        return `https://www.youtube.com/watch?v=${videoId}`;
+    }
+    return q;
+}
+
+// SONG2
+cmd({
+    pattern: "song22",
+    alias: "play22",
+    desc: "To download songs.",
     react: "🎵",
-    desc: "Download Song",
     category: "download",
-    filename: __filename,
-  },
-  async (
-    robin,
-    mek,
-    m,
-    {
-      from,
-      quoted,
-      body,
-      isCmd,
-      command,
-      args,
-      q,
-      isGroup,
-      sender,
-      senderNumber,
-      botNumber2,
-      botNumber,
-      pushname,
-      isMe,
-      isOwner,
-      groupMetadata,
-      groupName,
-      participants,
-      groupAdmins,
-      isBotAdmins,
-      isAdmins,
-      reply,
-    }
-  ) => {
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
     try {
-      if (!q) return reply("*නමක් හරි ලින්ක් එකක් හරි දෙන්න* 🌚❤️");
+        if (!q) return reply("*`Need Title`*");
+        q = convertYouTubeLink(q);
+        const search = await yts(q);
+        const data = search.videos[0];
+        const url = data.url;
 
-      // Search for the video
-      const search = await yts(q);
-      const data = search.videos[0];
-      const url = data.url;
+        const downMsg = `*Downloading ...📥*\n> gojo-ᴍᴅ ✻`;
+        const upMsg = `*Uploading ...📤*\n> gojo-ᴍᴅ ✻`;
 
-      // Song metadata description
-      let desc = `
-*❤️GOJO SONG DOWNLOADER❤️*
+        const sentMsg = await conn.sendMessage(from, {
+            image: { url: data.thumbnail },
+            caption: downMsg,
+            contextInfo: {
+                mentionedJid: ['94743826406@s.whatsapp.net'],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterName: "gojo-ᴍᴅ ✻",
+                    serverMessageId: 999
+                }
+            }
+        }, { quoted: mek });
 
-👻 *title* : ${data.title}
-👻 *description* : ${data.description}
-👻 *time* : ${data.timestamp}
-👻 *ago* : ${data.ago}
-👻 *views* : ${data.views}
-👻 *url* : ${data.url}
+        const down = await fetchJson(`https://apis-keith.vercel.app/download/dlmp3?url=${url}`);
+        await conn.sendMessage(from, {
+            text: upMsg,
+            edit: sentMsg.key,
+        });
 
-𝐌𝐚𝐝𝐞 𝐛𝐲 𝐬𝐚𝐲𝐮𝐫𝐚
-`;
+        const laraDown = down.result.downloadUrl;
 
-      // Send metadata thumbnail message
-      await robin.sendMessage(
-        from,
-        { image: { url: data.thumbnail }, caption: desc },
-        { quoted: mek }
-      );
+        await conn.sendMessage(from, {
+            audio: { url: laraDown },
+            mimetype: "audio/mpeg",
+            contextInfo: {
+                externalAdReply: {
+                    title: "gojo-ᴍᴅ",
+                    body: "© ᴄʀᴇᴀᴛᴇᴅ by sayura mihiranga",
+                    mediaType: 1,
+                    sourceUrl: url,
+                    thumbnailUrl: down.result.image,
+                    renderLargerThumbnail: true,
+                    showAdAttribution: true
+                }
+            }
+        }, { quoted: mek });
 
-      // Download the audio using @vreden/youtube_scraper
-      const quality = "128"; // Default quality
-      const songData = await ytmp3(url, quality);
-
-      // Validate song duration (limit: 30 minutes)
-      let durationParts = data.timestamp.split(":").map(Number);
-      let totalSeconds =
-        durationParts.length === 3
-          ? durationParts[0] * 3600 + durationParts[1] * 60 + durationParts[2]
-          : durationParts[0] * 60 + durationParts[1];
-
-      if (totalSeconds > 1800) {
-        return reply("⏱️ audio limit is 180 minitues");
-      }
-
-      // Send audio file
-      await robin.sendMessage(
-        from,
-        {
-          audio: { url: songData.download.url },
-          mimetype: "audio/mpeg",
-        },
-        { quoted: mek }
-      );
-
-      // Send as a document (optional)
-      await robin.sendMessage(
-        from,
-        {
-          document: { url: songData.download.url },
-          mimetype: "audio/mpeg",
-          fileName: `${data.title}.mp3`,
-          caption: "𝐌𝐚𝐝𝐞 𝐛𝐲 𝐬𝐚𝐲𝐮𝐫𝐚",
-        },
-        { quoted: mek }
-      );
-
-      return reply("*Thanks for using my bot* 🌚❤️");
+        await conn.sendMessage(from, { delete: sentMsg.key });
     } catch (e) {
-      console.log(e);
-      reply(`❌ Error: ${e.message}`);
+        console.log(e);
+        reply(`${e}`);
     }
-  }
-);
+});
 
+// SONG3
+cmd({
+    pattern: "song3",
+    alias: "play3",
+    react: "🎶",
+    desc: "Download YouTube song",
+    category: "main",
+    use: '.song <query>',
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    try {
+        q = convertYouTubeLink(q);
+        if (!q) return reply("*`Need YT_URL or Title`*");
+
+        const search = await yts(q);
+        const data = search.videos[0];
+        const url = data.url;
+
+        const apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${encodeURIComponent(url)}`;
+        const res = await fetch(apiUrl);
+        const sadiya = await res.json();
+
+        if (!sadiya?.result?.downloadUrl) return reply("Download failed. Try again later.");
+
+        await conn.sendMessage(from, {
+            audio: { url: sadiya.result.downloadUrl },
+            mimetype: "audio/mpeg",
+            fileName: `${data.title}.mp3`,
+            contextInfo: {
+                externalAdReply: {
+                    title: data.title.length > 25 ? `${data.title.substring(0, 22)}...` : data.title,
+                    body: "ꜱayura mihiranga",
+                    mediaType: 1,
+                    thumbnailUrl: data.thumbnail.replace('default.jpg', 'hqdefault.jpg'),
+                    showAdAttribution: true,
+                    renderLargerThumbnail: true
+                }
+            }
+        }, { quoted: mek });
+
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred. Please try again.");
+    }
+});
